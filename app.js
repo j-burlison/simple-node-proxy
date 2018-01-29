@@ -3,7 +3,7 @@ var app = express();
 
 var proxy = require('http-proxy-middleware');
 
-app.use('/client', proxy({target: 'http://0.0.0.0:8090/api', changeOrigin: true}));
+app.use('/client', proxy({target: 'http://node-service-josh-test.apps.employers.rht-labs.com/api', changeOrigin: true}));
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
