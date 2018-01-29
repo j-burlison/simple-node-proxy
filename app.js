@@ -11,8 +11,8 @@ app.use(cors());
 var request = require('request');
 
 app.use('/client', (req, res, next)=>{
-  console.log('PROXY HIT');
-  request('http://node-service-josh-test.apps.employers.rht-labs.com/api/client'+req.url, (response)=>{
+  console.log('PROXY HIT: '+'http://node-service-josh-test.apps.employers.rht-labs.com/api/client'+req.url);
+  request('http://node-service-josh-test.apps.employers.rht-labs.com/api/client'+req.url, (err, response)=>{
     console.log('PROXY GOT A RESPONSE');
     res.send(response.body);
   });
@@ -26,7 +26,7 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 
-app.use(express.static(__dirname));
+app.use('/index', express.static(__dirname));
 
 app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
