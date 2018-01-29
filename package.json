@@ -20,7 +20,8 @@
   "dependencies": {
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "http-proxy-middleware": "^0.17.4"
+    "http-proxy-middleware": "^0.17.4",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.6.6"
