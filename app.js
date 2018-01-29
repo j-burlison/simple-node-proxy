@@ -5,7 +5,7 @@ var app = express();
 
 app.use('/google', proxy({target: 'https://www.google.com', changeOrigin: true}));
 
-app.use('/proxy', proxy({target: 'http://node-service-josh-test.apps.employers.rht-labs.com', changeOrigin: true}));
+app.use('/proxy', proxy({target: 'http://node-service-josh-test.apps.employers.rht-labs.com/google', changeOrigin: true}));
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
