@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/j-burlison/simple-node-proxy#readme",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "http-proxy-middleware": "^0.17.4"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.6.6"
   }
 }
