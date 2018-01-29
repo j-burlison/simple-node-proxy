@@ -12,7 +12,7 @@ var request = require('request');
 
 app.use('/client', (req, res, next)=>{
   console.log('PROXY HIT');
-  request('http://node-service-josh-test.apps.employers.rht-labs.com/api/client'+req.url).pipe(res);
+  request('http://node-service.josh-test.svc/api/client'+req.url).pipe(res);
 });
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
