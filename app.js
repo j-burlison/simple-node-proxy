@@ -7,4 +7,9 @@ app.use('/', proxy({target: 'https://www.google.com', changeOrigin: true}));
 
 app.use('/proxy', proxy({target: 'http://node-service-josh-test.apps.employers.rht-labs.com', changeOrigin: true}));
 
-app.listen(3000);
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
+app.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
+
+module.exports = app ;
