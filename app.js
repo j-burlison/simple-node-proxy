@@ -10,6 +10,7 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 
 // Enable CORS. For local Development and De-coupled UI Deployment and Code Base
 if (process.env.NAME === 'DEV') {
+  console.log('In DEV Env');
   app.use(cors());
 }
 
