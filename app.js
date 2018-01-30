@@ -17,6 +17,9 @@ if (process.env.NAME === 'DEV') {
 // Route all '/client' REST traffic to an OSE Service that has exposed endpoints at '/api/client'
 app.use('/client', proxy({target: 'http://node-service-josh-test.apps.employers.rht-labs.com/api', changeOrigin: true}));
 
+// LOCALHOST Proxy
+// app.use('/client', proxy({target: 'http://0.0.0.0:8090/api', changeOrigin: true}));
+
 // Serve Static Files to '/index' (for UI)
 app.use('/index', express.static(__dirname));
 
