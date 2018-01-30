@@ -6,7 +6,7 @@ var proxy = require('http-proxy-middleware');
 app.use(cors());
 
 // app.use('/client', proxy({target: 'http://0.0.0.0:8090/api', changeOrigin: false}));
-app.use('/client', proxy({target: 'http://node-service-josh-test.apps.employers.rht-labs.com/api', changeOrigin: false}));
+app.use('/client', proxy({target: 'http://node-service-josh-test.apps.employers.rht-labs.com/api', changeOrigin: true}));
 
 var request = require('request');
 
